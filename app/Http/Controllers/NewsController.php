@@ -76,8 +76,8 @@ class NewsController extends Controller
 		{
 		    $searchTerm = $request->input('search');
 
-		    $results = News::where('title', 'LIKE', '%' . $searchTerm . '%')->get();
+		    $newsResults = News::where('title', 'LIKE', '%' . $searchTerm . '%')->get();
 
-		    return view('search.results', compact('results', 'searchTerm'));
+		    return view('search.results', compact('newsResults', 'searchTerm'));
 		}
 }

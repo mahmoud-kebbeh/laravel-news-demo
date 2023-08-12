@@ -66,8 +66,8 @@ class TagController extends Controller
 		{
 		    $searchTerm = $request->input('search');
 
-		    $results = Tag::where('name', 'LIKE', '%' . $searchTerm . '%')->get();
+		    $tagsResults = Tag::where('name', 'LIKE', '%' . $searchTerm . '%')->get();
 
-		    return view('search.results', compact('results', 'searchTerm'));
+		    return view('search.results', compact('tagsResults', 'searchTerm'));
 		}
 }

@@ -61,8 +61,8 @@ class CategoryController extends Controller
 		{
 		    $searchTerm = $request->input('search');
 
-		    $results = Category::where('name', 'LIKE', '%' . $searchTerm . '%')->get();
+		    $categoriesResults = Category::where('name', 'LIKE', '%' . $searchTerm . '%')->get();
 
-		    return view('search.results', compact('results', 'searchTerm'));
+		    return view('search.results', compact('categoriesResults', 'searchTerm'));
 		}
 }
